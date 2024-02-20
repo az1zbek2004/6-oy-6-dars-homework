@@ -1,0 +1,83 @@
+.header{
+    height: 60px;
+    background: blueviolet;
+    display: flex;
+    align-items:center;
+}
+.navbar{
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav__list--group{
+    display: flex;
+    list-style-type: none;
+    gap: 40px;
+}
+.nav--title{
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+}
+.nav__href{
+    text-decoration: none;
+    font-size: 22px;
+    color: white;
+    transition: all 0.5s;
+}
+.nav__href:hover{
+    color: blue;
+}
+.card-wrapper{
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items:center;
+    justify-content: space-between;
+}
+.Back{
+    background: red;
+    width: 100px;
+    color:white;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    margin-top: 5px;
+    margin-left: 80vw;
+    cursor: pointer;
+}
+.about-card{
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 70px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.phone-image{
+    border-radius:5px;
+    width: 45%;
+    height: 300px;
+}
+.about-text h2{
+    font-size: 58px;
+    margin-bottom: 40px;
+}
+.about-text p{
+    font-size: 20px;
+}
+
+
+
+
+
+@media screen and (max-width:510px) {
+    .nav__list--group{
+        display: none;
+    }
+}

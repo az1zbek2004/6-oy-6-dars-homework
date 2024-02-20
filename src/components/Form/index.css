@@ -1,0 +1,41 @@
+.form{
+    width: 85%;
+    margin: 20px auto;
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 20px;
+    background:rgb(231, 229, 229);
+}
+.input--group{
+    display: flex;
+    align-items:center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.input--group input{
+    padding: 10px 20px;
+    border:none;
+    border-radius:5px;
+    outline: none;
+}
+.input--group .price{
+    width: 150px;
+}
+.save--button{
+    width: 200px;
+    padding: 6px 0;
+    font-size: 20px;
+    border-radius:5px;
+    border:none;
+    color: white;
+    background:blueviolet;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+.save--button:hover{
+    background:rgb(97, 2, 186);
+}
