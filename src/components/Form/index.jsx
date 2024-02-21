@@ -1,5 +1,4 @@
 import { useRef } from "react";
-import card from "../../assets/data/data.json";
 import "./index.css";
 
 function Form(props) {
@@ -9,6 +8,18 @@ function Form(props) {
   const brandRef = useRef('');
 
   function vaidate(rating, maxPrice, minPrice, brand) {
+
+    if (brand) {
+    const brandSome = props.data.some(el => {
+      return brand == el.brand;
+    })
+      
+      if (!brandSome) {
+        alert("bunday brand bizda mzvjud emas")
+        brandRef.current.focus();
+        return false;
+      }
+    }
 
     if (!rating && !maxPrice && !minPrice && !brand) {
       alert("Filter bo'sh bo'lishi mumkin emas!")

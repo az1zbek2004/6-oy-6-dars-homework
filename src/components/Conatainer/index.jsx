@@ -31,7 +31,6 @@ function Container() {
     });
 
     setCardWrap(Filter);
-    console.log(Filter);
   }
 
   function handleClick(data) {
@@ -71,7 +70,7 @@ function Container() {
             </nav>
           </header>
 
-          <Form filterCard={cardFilter} />
+          <Form filterCard={cardFilter} data={card.products}/>
 
           {cardWrap.length != 30 && (
             <button
