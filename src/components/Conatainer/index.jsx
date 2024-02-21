@@ -14,15 +14,24 @@ function Container() {
 
   function cardFilter(rating, maxPrice, minPrice, brand) {
     let Filter = cardWrap.filter((el) => {
-      return (
-        brand == el.brand &&
-        rating <= el.rating &&
-        maxPrice >= el.price &&
-        minPrice <= el.price
-      );
+      if (maxPrice && minPrice) {
+        return (
+          brand && brand == el.brand ||
+          maxPrice > el.price && minPrice < el.price ||
+          rating && rating < el.rating 
+        );
+      } else {
+        return (
+          brand && brand == el.brand ||
+          maxPrice && maxPrice > el.price ||
+          minPrice && minPrice < el.price ||
+          rating && rating < el.rating 
+        );
+      }
     });
 
     setCardWrap(Filter);
+    console.log(Filter);
   }
 
   function handleClick(data) {

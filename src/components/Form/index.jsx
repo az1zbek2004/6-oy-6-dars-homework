@@ -10,28 +10,38 @@ function Form(props) {
 
   function vaidate(rating, maxPrice, minPrice, brand) {
 
+    if (!rating && !maxPrice && !minPrice && !brand) {
+      alert("Filter bo'sh bo'lishi mumkin emas!")
+      ratingRef.current.focus()
+      return false;
+    }
+
     if (rating > 5) {
       alert(`rating 5 dan kichik bo'lishi kerak`);
       ratingRef.current.focus();
       return false;
     }
 
-    if (!maxPrice) {
-      alert(`maximal narxni kiriting`);
+    if (maxPrice < 0) {
+      alert(`maximal narx manfiy bo'lishi mumkin emas`);
       maxPriceRef.current.focus();
-      return false;
     }
 
-    if (!minPrice) {
-      alert(`minimal narxini yozing`);
+    
+    if (minPrice < 0) {
+      alert(`minimal narx manfiy bo'lishi mumkin emas`);
       ratingRef.current.focus();
       return false;
     }
 
-    if (!brand) {
-      alert(`brandni kiriting!`);
-      ratingRef.current.focus();
-      return false;
+    if (maxPrice && minPrice) {
+      if (maxPrice < minPrice) {
+        alert(`maximal narx minimal narxdan katta bo'lishi kerak`);
+        maxPriceRef.current.focus();
+        return false;
+      }
+    } else {
+      return true;
     }
 
 
